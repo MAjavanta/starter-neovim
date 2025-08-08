@@ -38,4 +38,9 @@ return {
             })
         end,
     },
+    -- PLUGIN: vim-tmux-navigator
+    {
+        "christoomey/vim-tmux-navigator",
+        lazy = false,
+    }
 }
