@@ -81,6 +81,7 @@ return {
 	    	require("ibl").setup()
 	    end
     },
+    -- PLUGIN: lualine.nvim
     {
         'nvim-lualine/lualine.nvim',
         lazy = false,
@@ -99,4 +100,35 @@ return {
             })
         end,
     },
+    -- PLUGIN: gitsigns
+    {
+        "lewis6991/gitsigns.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("gitsigns").setup({
+                signs = {
+                    add          = { text = "" },
+                    change       = { text = "󰥛" },
+                    delete       = { text = "" },
+                    topdelete    = { text = "" },
+                    changedelete = { text = "" },
+                },
+                current_line_blame = true, -- inline blame text
+            })
+        end,
+    },
+    -- PLUGIN: which-key
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        config = function()
+            local wk = require("which-key")
+            wk.setup()
+            wk.add({
+                { "<leader>g", group = "git" },
+                { "<leader>f", group = "file" },
+                { "<leader>l", group = "lsp" },
+            })
+        end,
+    }
 }

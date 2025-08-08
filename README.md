@@ -2,9 +2,9 @@
 
 Beginner Neovim config for Python, C, C++, Lua, and web development (HTML, CSS, JS, TS, React, Vue)
 
-This is designed to be a relatively lightweight Neovim configuration while still being beginner friendly and allowing you to get started quickly should you choose to use it.
+This is designed to be a relatively lightweight Neovim configuration while still being beginner friendly and allowing you to get started quickly should you choose to use it. It also integrates git commands into Neovim.
 
-If you don't already know this [Kickstart](https://github.com/nvim-lua/kickstart.nvim) is a great beginner Neovim config. However, I found it difficult to know exactly how to extend it to my liking, so I made this. This should be usable from the get-go but also provides a modular structure to follow.
+If you don't already know this, [Kickstart](https://github.com/nvim-lua/kickstart.nvim) is a great beginner Neovim config. However, I found it difficult to know exactly how to extend it to my liking, so I made this. This should be usable from the get-go but also provides a modular structure to follow.
 
 ---
 
@@ -54,6 +54,12 @@ You can explore a plugin's GitHub to see how you can configure or use it. Many h
 - Formatting on save and custom keybindings are configured per language server in `lua/plugins/lsp/lspconfig.lua`.
 
 ---
+
+### Git usage inside Neovim
+
+- The file `lua/plugins/tools.lua` defines a config (and some keymaps) allowing you to use Git commands inside Neovim
+- This uses the [vim-fugitive](https://github.com/tpope/vim-fugitive) plugin.
+- See the file for keymaps to use <leader> to do commands such as git status, git add (the current file), git commit, git diff.
 
 ## Installation instructions
 
